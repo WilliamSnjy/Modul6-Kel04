@@ -1,0 +1,25 @@
+import React from "react";
+import "./index.css";
+export default function index({ data, onClick }) {
+    return (
+        <div className="card" onClick={onClick}>
+        {data ? (
+            <>
+                <figure>
+                    {data.i && data.i.imageUrl ? (
+                        <img src={data.i.imageUrl} alt={data.l} />
+                    ) :null}
+                </figure>
+                <div className="card-info">
+                    <h3>{data.l}</h3>
+                    <p>{data.q}</p>
+                    <p>Rank : {data.rank}</p>
+                    <p>Pemeran : {data.s}</p>
+                </div>
+            </>
+        ) : (
+            <p>Loading...</p>
+        )}
+        </div>
+    );
+}
